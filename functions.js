@@ -50,7 +50,7 @@ function subtract (x,y){
  * @return {number} the product
  */
 function multiply (x,y){
-  
+  return (x, x*y);
 }
 /**
  * Divides the first number by the second.
@@ -58,7 +58,9 @@ function multiply (x,y){
  * @param {number} y
  * @return {number} the quotient
  */
-
+function divide(x,y){
+  return (x, x/y);
+}
 /**
  * Multiplies a number by itself.
  * @param {number} x, number to be squared
