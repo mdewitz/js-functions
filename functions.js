@@ -212,129 +212,18 @@ function isOdd (n){
  */
 
 function letterGrade (score, total){
-if ((score/total)<=1.0 && (score/total)>=0.9) {
-    return "A";
-  } else if ((score/total)<=0.89 && (score/total)>0.8) {
-    return "B";
-  } else if ((score/total)<=0.79 && (score/total)>=0.7) {
-    return "C";
-  } else if ((score/total)<=0.699 && (score/total)>=0.6) {
-    return "D";
-  } else if ((score/total)<=0.59 && (score/total)>=0) {
-    return "F";  
+  if ((score/total)<=1.0 && (score/total)>=0.9) {
+      return "A";
+    } else if ((score/total)<=0.89 && (score/total)>0.8) {
+      return "B";
+    } else if ((score/total)<=0.79 && (score/total)>=0.7) {
+      return "C";
+    } else if ((score/total)<=0.699 && (score/total)>=0.6) {
+      return "D";
+    } else if ((score/total)<=0.59 && (score/total)>=0) {
+      return "F";  
+    }
   }
-
-}
-
-/** var answer = score/total;
-switch (answer){
-    case 'answer<=1.0 && answer>=.9': 
-      string = 'you got an A';
-      break; 
-    case 'answer<=.89 && answer>=.8': 
-      string = 'you got an B';
-      break;
-    case 'answer<=.79 && answer>=.7': 
-      string = 'you got an C';
-      break;
-    case 'answer<=.59 && answer>=.0': 
-      string = 'you got an F';
-      break;
-  }
-  
-  return string;
-}
-
-
-/*switch (score){
-		case 'score<=100 && score>=90': 
-			answer = 'A';
-			string = 'you got a ' + answer;
-			break; 
-		case 'score<=89 && score>=80': 
-			answer = 'B';
-			string = 'you got a ' + answer;
-			break;
-		case 'score<=79 && score>=70': 
-			answer = 'C';
-			string = 'you got a ' + answer;
-			break;
-		case 'score<=59 && score>=0': 
-			answer = 'F';
-			string = 'you got a ' + answer;
-			break;
-	}
-	console.log(string);
-
-	return answer;
-}
-
- /**if (100>=score>=90) {
-		string = (score + " is an A");
-	} else if (score<=89 && score>=80) {
-		string = (score + " is an B");
-	} else if (score<=79 && score>=70) {
-		string = (score + " is an C");
-	} else if (score<=69 && score>=60) {
-		string = (score + " is an D");
-	} else if (score<=59 && score>=0) {
-		string = (score + " is an F");   
-	}
-}
-
-/**var string = total;
-	if (score<=100 && score>=90) {
-		return string ("A");
-	} else if (score<=89 && score>=80) {
-		return string ("B");
-	} else if (score<=79 && score>=70) {
-		return string ("C");
-	} else if (score<=69 && score>=60) {
-		return string ("D");
-	} else if (score<=59 && score>=0) {
-		return string ("F");  
-	}
- 
-	return string;
-}
-
-/**  var string = total;
-	if (score<=100 && score>=90) {
-		return "A",
-		string ("A");
-	} else if (score<=89 && score>=80) {
-		return "B",
-		string = "B"; 
-	} else if (score<=79 && score>=70) {
-		return "C",
-		string = "C"; 
-	} else if (score<=69 && score>=60) {
-		return "D",
-		string = "D";
-	} else if (score<=59 && score>=0) {
-		return "F",
-		string = "F";   
-	}
-	console.log(string);
-	return score;
-}
-/**
-function letterGrade (score, total) {
-	var string = total;
-	if (101>score && score>=90) {
-		string = "A";
-	} else if (90>score && score>=80) {
-		string = "B"; 
-	} else if (80>score && score>=70) {
-		string = "C"; 
-	} else if (70>score && score>=60) {
-		string = "D";
-	} else if (70>score && score>=0) {
-		string = "F";   
-	}
-	console.log(string);
-}
-
 
 /**
  * Checks if a `restaurant` object has are `views` field.
@@ -343,17 +232,34 @@ function letterGrade (score, total) {
  * @param {object} restaurant represents a restaurant
  */
 
-/**
- * Joins two strings with a space.
- * @param {string} word1
- * @param {string} word2
- * @return {string} joined the words joined with a space
- */
+function incrementReviews(restaurant) {
+ if (!restaurant || (typeof restaurant !== 'object')) {
+ return;
+  }
+ if(restaurant.hasOwnProperty("reviews")){
+  restaurant.reviews++;
+ } else{
+  restaurant.reviews =1;
+ }
+  return restaurant;
+}
 
 /**
- * Returns a circle object with the properties `circumference` and `area`.
- * Use Math.PI for the value π.
- * (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/PI)
- * @param {number} radius
- * @return {object} circle
- */
+* Joins two strings with a space.
+* @param {string} word1
+* @param {string} word2
+* @return {string} joined the words joined with a space
+*/
+
+function combine(word1, word2) {
+return String(word1) + " " + String(word2);
+}
+
+/**
+* Returns a circle object with the properties `circumference` and `area`.
+* Use Math.PI for the value π.
+* (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/PI)
+* @param {number} radius
+* @return {object} circle
+*/
+function createCircle(radius)
